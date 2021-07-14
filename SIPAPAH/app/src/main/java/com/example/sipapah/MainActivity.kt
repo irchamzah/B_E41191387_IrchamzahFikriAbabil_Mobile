@@ -1,12 +1,15 @@
 package com.example.sipapah
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.example.sipapah.activity.LoginActivity
 import com.example.sipapah.fragment.*
+import com.example.sipapah.helper.SharedPref
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -23,9 +26,15 @@ class MainActivity : AppCompatActivity() {
     private lateinit var menuItem: MenuItem
     private lateinit var bottomNavigationView: BottomNavigationView
 
+    private var statusLogin = false
+
+    private lateinit var sp:SharedPref
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        sp = SharedPref(this)
 
         setUpBottomNav()
     }
@@ -49,16 +58,36 @@ class MainActivity : AppCompatActivity() {
                     panggilFragment(0, fragmentHome)
                 }
                 R.id.navigation_layanan->{
-                    panggilFragment(1, fragmentLayanan)
+                    if (sp.getStatusLogin()){
+                        panggilFragment(1, fragmentLayanan)
+                    } else{
+                        startActivity(Intent(this,LoginActivity::class.java))
+                    }
+
                 }
                 R.id.navigation_kreasi->{
-                    panggilFragment(2, fragmentKreasi)
+                    if (sp.getStatusLogin()){
+                        panggilFragment(2, fragmentKreasi)
+                    } else{
+                        startActivity(Intent(this,LoginActivity::class.java))
+                    }
+
                 }
                 R.id.navigation_notifikasi->{
-                    panggilFragment(3, fragmentNotifikasi)
+                    if (sp.getStatusLogin()){
+                        panggilFragment(3, fragmentNotifikasi)
+                    } else{
+                        startActivity(Intent(this,LoginActivity::class.java))
+                    }
+
                 }
                 R.id.navigation_profil->{
-                    panggilFragment(4, fragmentProfil)
+                    if (sp.getStatusLogin()){
+                        panggilFragment(4, fragmentProfil)
+                    } else{
+                        startActivity(Intent(this,LoginActivity::class.java))
+                    }
+
                 }
             }
 

@@ -44,7 +44,7 @@ class HomeFragment : Fragment() {
         layoutManager.orientation = LinearLayoutManager.HORIZONTAL
 
         rvKreasi.adapter = AdapterKreasi(arrKreasi)
-        rvKreasi.layoutManager
+        rvKreasi.layoutManager = layoutManager
 
         return view
     }

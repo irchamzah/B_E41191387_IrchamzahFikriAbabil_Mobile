@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
         android:background="@color/hijau2"
         android:padding="8dp"
         android:orientation="horizontal"
@@ -21,32 +21,97 @@
             android:textSize="20dp"
             android:textColor="@color/putih"/>
 
-    </LinearLayout>
+    </RelativeLayout>
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/vp_slider"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="190dp"/>
+        android:layout_height="match_parent">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:text="Kreasi"
-            android:textStyle="bold"
-            android:textColor="@color/hijau2"
-            android:textSize="16dp"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_kreasi"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="match_parent">
 
-    </LinearLayout>
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/vp_slider"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@color/putih">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/hijau2"
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SISTEM INFORMASI PENGOLAH SAMPAH (SIPAPAH)"/>
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:textColor="@color/hijau2"
+                    android:text="Sipapah adalah aplikasi pengolah sampah kertas untuk semua kalangan yang hidup dengan tumpukan kertas. Kita harus peduli terhadap kelestarian alam untuk tidak membuang kertas bekas sembarangan. Meskipun harga kertas bekas tidak seberapa, menjual kertas bekas berarti turut menjaga kelestarian lingkungan. Cinta Alam bersama SIPAPAH."
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@color/hijau2">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/putih"
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LAYANAN"/>
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:textColor="@color/putih"
+                    android:text="Layanan yang kami berikan di aplikasi ini adalah Memberikan layanan penjemputan sampah dan dibayar secara langsung atau disebut COD."
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="15dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Kreasi"
+                    android:textStyle="bold"
+                    android:textColor="@color/hijau2"
+                    android:textSize="16dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_kreasi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
 
 </LinearLayout>
