@@ -8,6 +8,7 @@ import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.example.sipapah.activity.LoginActivity
+import com.example.sipapah.activity.MasukActivity
 import com.example.sipapah.fragment.*
 import com.example.sipapah.helper.SharedPref
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -61,7 +62,7 @@ class MainActivity : AppCompatActivity() {
                     if (sp.getStatusLogin()){
                         panggilFragment(1, fragmentLayanan)
                     } else{
-                        startActivity(Intent(this,LoginActivity::class.java))
+                        startActivity(Intent(this,MasukActivity::class.java))
                     }
 
                 }
@@ -69,7 +70,7 @@ class MainActivity : AppCompatActivity() {
                     if (sp.getStatusLogin()){
                         panggilFragment(2, fragmentKreasi)
                     } else{
-                        startActivity(Intent(this,LoginActivity::class.java))
+                        startActivity(Intent(this,MasukActivity::class.java))
                     }
 
                 }
@@ -77,7 +78,7 @@ class MainActivity : AppCompatActivity() {
                     if (sp.getStatusLogin()){
                         panggilFragment(3, fragmentNotifikasi)
                     } else{
-                        startActivity(Intent(this,LoginActivity::class.java))
+                        startActivity(Intent(this,MasukActivity::class.java))
                     }
 
                 }
@@ -85,7 +86,7 @@ class MainActivity : AppCompatActivity() {
                     if (sp.getStatusLogin()){
                         panggilFragment(4, fragmentProfil)
                     } else{
-                        startActivity(Intent(this,LoginActivity::class.java))
+                        startActivity(Intent(this,MasukActivity::class.java))
                     }
 
                 }
