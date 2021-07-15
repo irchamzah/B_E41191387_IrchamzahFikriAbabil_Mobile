@@ -15,6 +15,7 @@ import com.example.sipapah.R
 import com.example.sipapah.activity.DetailKreasiActivity
 import com.example.sipapah.activity.LoginActivity
 import com.example.sipapah.model.Kreasi
+import com.google.gson.Gson
 import com.squareup.picasso.Picasso
 
 class AdapterKreasi(var activity: Context, var arrDataKreasi:ArrayList<Kreasi>):RecyclerView.Adapter<AdapterKreasi.Holder>() {
@@ -46,7 +47,10 @@ class AdapterKreasi(var activity: Context, var arrDataKreasi:ArrayList<Kreasi>):
             .error(R.drawable.sipapa_hijau)
             .into(holder.imgKreasi)
         holder.cvItemKreasi.setOnClickListener{
-            activity.startActivity(Intent(activity, DetailKreasiActivity::class.java))
+            var Data = Intent(activity, DetailKreasiActivity::class.java) //kirim Data ke DetailKreasiActivity
+            val dataBerdasarkanPosisi = Gson().toJson(arrDataKreasi[position], Kreasi::class.java) //diganti ke String
+            Data.putExtra("dataKreasi", dataBerdasarkanPosisi)
+            activity.startActivity(Data)
         }
 
     }
