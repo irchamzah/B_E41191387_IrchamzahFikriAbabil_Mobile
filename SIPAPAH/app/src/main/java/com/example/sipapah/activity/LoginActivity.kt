@@ -62,12 +62,22 @@ class LoginActivity : AppCompatActivity() {
                 val respon = response.body()!!
 
                 if (respon.success == 1){
+
                     sp.setStatusLogin(true)
+
+                    sp.setUser(respon.user)
+//                    sp.setString(sp.name, respon.user.name)
+//                    sp.setString(sp.email, respon.user.email)
+//                    sp.setString(sp.foto, respon.user.foto)
+//                    sp.setString(sp.alamat, respon.user.alamat)
+//                    sp.setString(sp.nohp, respon.user.nohp)
+
                     val intent =Intent(this@LoginActivity, MainActivity::class.java)
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
                     startActivity(intent)
                     finish()
                     Toast.makeText(this@LoginActivity, "Berhasil Login. Selamat Datang "+respon.user.name, Toast.LENGTH_SHORT).show()
+
                 } else{
                     Toast.makeText(this@LoginActivity, "Error: "+respon.message, Toast.LENGTH_SHORT).show()
                 }
