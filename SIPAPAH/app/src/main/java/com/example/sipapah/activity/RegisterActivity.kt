@@ -82,6 +82,9 @@ class RegisterActivity : AppCompatActivity() {
 
                 if (respon.success == 1){
                     sp.setStatusLogin(true)
+
+                    sp.setUser(respon.user)
+
                     val intent =Intent(this@RegisterActivity, MainActivity::class.java)
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
                     startActivity(intent)
