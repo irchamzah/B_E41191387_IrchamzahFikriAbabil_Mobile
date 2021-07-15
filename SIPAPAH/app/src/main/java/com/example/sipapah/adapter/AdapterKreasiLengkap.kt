@@ -1,6 +1,5 @@
 package com.example.sipapah.adapter
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -8,26 +7,25 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.sipapah.MainActivity
 import com.example.sipapah.R
 import com.example.sipapah.activity.DetailKreasiActivity
-import com.example.sipapah.activity.LoginActivity
 import com.example.sipapah.model.Kreasi
 import com.squareup.picasso.Picasso
 
-class AdapterKreasi(var activity: Context, var arrDataKreasi:ArrayList<Kreasi>):RecyclerView.Adapter<AdapterKreasi.Holder>() {
+class AdapterKreasiLengkap(var activity: Context, var arrDataKreasi:ArrayList<Kreasi>):RecyclerView.Adapter<AdapterKreasiLengkap.Holder>() {
 
     class Holder(view: View):RecyclerView.ViewHolder(view) {
-        val tvNama = view.findViewById<TextView>(R.id.tv_nama)
-        val imgKreasi = view.findViewById<ImageView>(R.id.img_kreasi)
-        val tvKeterangan = view.findViewById<TextView>(R.id.tv_keterangan)
-        val cvItemKreasi = view.findViewById<ImageView>(R.id.img_kreasi)
+        val tvNama = view.findViewById<TextView>(R.id.tv_namaLengkap)
+        val imgKreasi = view.findViewById<ImageView>(R.id.img_kreasiLengkap)
+        val tvKeterangan = view.findViewById<TextView>(R.id.tv_keteranganLengkap)
+        val cvItemKreasiLengkap = view.findViewById<ImageView>(R.id.img_kreasiLengkap)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_kreasi, parent, false)
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_kreasi_lengkap, parent, false)
         return Holder(view)
     }
 
@@ -45,9 +43,10 @@ class AdapterKreasi(var activity: Context, var arrDataKreasi:ArrayList<Kreasi>):
             .placeholder(R.drawable.sipapa_hijau)
             .error(R.drawable.sipapa_hijau)
             .into(holder.imgKreasi)
-        holder.cvItemKreasi.setOnClickListener{
+        holder.cvItemKreasiLengkap.setOnClickListener{
             activity.startActivity(Intent(activity, DetailKreasiActivity::class.java))
         }
-
     }
+
+
 }

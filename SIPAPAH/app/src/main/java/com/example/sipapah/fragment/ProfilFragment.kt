@@ -63,7 +63,7 @@ class ProfilFragment : Fragment() {
 
         tvNama.text = user.name
         tvEmail.text = user.email
-        tvNohp.text = user.nohp
+//        tvNohp.text = user.nohp
 
     }
 
