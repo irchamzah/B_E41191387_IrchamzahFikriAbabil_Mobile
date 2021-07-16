@@ -32,4 +32,7 @@ interface ApiService{
     @GET("kreasi")
     fun getkreasi():Call<ResponModel>
 
+    @GET("notifikasi")
+    fun getnotifikasi():Call<ResponModel>
+
 }
