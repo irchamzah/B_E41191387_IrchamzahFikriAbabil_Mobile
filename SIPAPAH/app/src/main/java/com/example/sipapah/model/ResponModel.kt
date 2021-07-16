@@ -6,5 +6,6 @@ class ResponModel {
     var user = User()
     var kreasis: ArrayList<Kreasi> = ArrayList()
     var notifikasis: ArrayList<Notifikasi> = ArrayList()
+    var layanan = Layanan()
 
 }

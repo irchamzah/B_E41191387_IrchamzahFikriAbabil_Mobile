@@ -26,6 +26,7 @@
         <activity android:name=".activity.MasukActivity" />
         <activity android:name=".activity.RegisterActivity" />
         <activity android:name=".activity.DetailKreasiActivity" />
+        <activity android:name=".activity.LayananActivity" />
     </application>
 
 </manifest>

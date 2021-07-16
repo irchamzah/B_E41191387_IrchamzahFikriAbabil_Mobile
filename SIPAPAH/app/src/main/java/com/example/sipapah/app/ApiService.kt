@@ -29,12 +29,20 @@ interface ApiService{
     @GET("kreasi")
     fun getkreasi():Call<ResponModel>
 
-//    @GET("notifikasi")
-//    fun getnotifikasi():Call<ResponModel>
-
     @GET("notifikasi/user/{id}")
     fun getnotifikasi(
             @Path("id") id: Int
+    ):Call<ResponModel>
+
+    @FormUrlEncoded
+    @POST("layanan/pesan/{id}")
+    fun setmemesan(
+
+            @Field("category_id") category_id:Int,
+            @Field("file") file:String,
+            @Field("tanggaljemput") tanggaljemput:String,
+            @Field("keterangan") keterangan:String
+
     ):Call<ResponModel>
 
 }

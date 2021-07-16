@@ -37,7 +37,7 @@ class KreasiFragment : Fragment() {
 
         init(view)
 
-        getKreasi()
+        setMemesan()
 
         return view
     }
@@ -48,7 +48,7 @@ class KreasiFragment : Fragment() {
 
     private var listKreasi: ArrayList<Kreasi> = ArrayList()
 
-    fun getKreasi() {
+    fun setMemesan() {
         ApiConfig.instanceRetrofit.getkreasi().enqueue(object : Callback<ResponModel> {
             override fun onFailure(call: Call<ResponModel>, t: Throwable) {
 
