@@ -3,6 +3,7 @@ package com.example.sipapah.helper
 import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
+import com.example.sipapah.model.Layanan
 import com.example.sipapah.model.User
 import com.google.gson.Gson
 
@@ -17,7 +18,9 @@ class SharedPref(activity: Activity) {
 //    val nohp = "nohp"
 
     val user = "user"
-//    val notifikasi = "notifikasi"
+    val layanan = "layanan"
+
+
 
     val mypref = "MAIN_PRF"
     val sp:SharedPreferences
@@ -48,7 +51,10 @@ class SharedPref(activity: Activity) {
     }
 
 
-
+    fun setPesanan(value: Layanan) {
+        val data: String = Gson().toJson(value, Layanan::class.java)
+        sp.edit().putString(layanan, data).apply()
+    }
 
     fun setString(key: String, value: String){
         sp.edit().putString(key, value).apply()
