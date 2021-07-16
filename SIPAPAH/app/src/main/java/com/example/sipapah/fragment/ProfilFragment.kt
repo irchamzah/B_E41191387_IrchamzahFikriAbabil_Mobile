@@ -52,6 +52,14 @@ class ProfilFragment : Fragment() {
         return view
     }
 
+    private fun init(view:View){
+        btnLogout = view.findViewById(R.id.btn_logout)
+
+        tvNama = view.findViewById(R.id.tv_nama)
+        tvEmail = view.findViewById(R.id.tv_email)
+        tvNohp = view.findViewById(R.id.tv_phone)
+    }
+
     fun setData(){
 
         if(sp.getUser() == null){
@@ -68,12 +76,6 @@ class ProfilFragment : Fragment() {
 
     }
 
-    private fun init(view:View){
-        btnLogout = view.findViewById(R.id.btn_logout)
 
-        tvNama = view.findViewById(R.id.tv_nama)
-        tvEmail = view.findViewById(R.id.tv_email)
-        tvNohp = view.findViewById(R.id.tv_phone)
-    }
 
 }

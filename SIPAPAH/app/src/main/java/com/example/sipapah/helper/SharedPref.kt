@@ -17,6 +17,7 @@ class SharedPref(activity: Activity) {
 //    val nohp = "nohp"
 
     val user = "user"
+//    val notifikasi = "notifikasi"
 
     val mypref = "MAIN_PRF"
     val sp:SharedPreferences
@@ -45,6 +46,7 @@ class SharedPref(activity: Activity) {
         val data:String = sp.getString(user, null) ?: return null
         return Gson().fromJson<User>(data, User::class.java)
     }
+
 
 
 

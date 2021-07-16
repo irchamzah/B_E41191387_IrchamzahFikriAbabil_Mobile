@@ -46,15 +46,6 @@ class KreasiFragment : Fragment() {
         rvKreasi = view.findViewById(R.id.rv_kreasi_lengkap)
     }
 
-    fun displayKreasi() {
-        var layoutManager = LinearLayoutManager(activity)
-        layoutManager.orientation = LinearLayoutManager.VERTICAL
-
-        rvKreasi.adapter = AdapterKreasiLengkap(requireActivity(),listKreasi)
-        rvKreasi.layoutManager = layoutManager
-
-    }
-
     private var listKreasi: ArrayList<Kreasi> = ArrayList()
 
     fun getKreasi() {
@@ -72,5 +63,14 @@ class KreasiFragment : Fragment() {
 
             }
         })
+    }
+
+    fun displayKreasi() {
+        var layoutManager = LinearLayoutManager(activity)
+        layoutManager.orientation = LinearLayoutManager.VERTICAL
+
+        rvKreasi.adapter = AdapterKreasiLengkap(requireActivity(),listKreasi)
+        rvKreasi.layoutManager = layoutManager
+
     }
 }
