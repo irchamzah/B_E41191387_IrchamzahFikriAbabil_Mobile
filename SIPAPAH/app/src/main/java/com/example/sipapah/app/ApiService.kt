@@ -3,10 +3,7 @@ package com.example.sipapah.app
 import com.example.sipapah.model.ResponModel
 import okhttp3.ResponseBody
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface ApiService{
 
@@ -32,7 +29,12 @@ interface ApiService{
     @GET("kreasi")
     fun getkreasi():Call<ResponModel>
 
-    @GET("notifikasi")
-    fun getnotifikasi():Call<ResponModel>
+//    @GET("notifikasi")
+//    fun getnotifikasi():Call<ResponModel>
+
+    @GET("notifikasi/user/{id}")
+    fun getnotifikasi(
+            @Path("id") id: Int
+    ):Call<ResponModel>
 
 }

@@ -11,6 +11,7 @@ import com.example.sipapah.R
 import com.example.sipapah.adapter.AdapterKreasiLengkap
 import com.example.sipapah.adapter.AdapterNotifikasi
 import com.example.sipapah.app.ApiConfig
+import com.example.sipapah.helper.SharedPref
 import com.example.sipapah.model.Kreasi
 import com.example.sipapah.model.Notifikasi
 import com.example.sipapah.model.ResponModel
@@ -49,7 +50,10 @@ class NotifikasiFragment : Fragment() {
     private var listNotifikasi: ArrayList<Notifikasi> = ArrayList()
 
     fun getNotifikasi() {
-        ApiConfig.instanceRetrofit.getnotifikasi().enqueue(object : Callback<ResponModel> {
+
+        val id = SharedPref(requireActivity()).getUser()!!.id
+
+        ApiConfig.instanceRetrofit.getnotifikasi(id).enqueue(object : Callback<ResponModel> {
             override fun onFailure(call: Call<ResponModel>, t: Throwable) {
 
             }
