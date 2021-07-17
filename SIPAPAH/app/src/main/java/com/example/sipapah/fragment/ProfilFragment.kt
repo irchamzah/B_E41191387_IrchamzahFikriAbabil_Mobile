@@ -45,6 +45,9 @@ class ProfilFragment : Fragment() {
 
         btnLogout.setOnClickListener{
             sp.setStatusLogin(false)
+            val intent =Intent(activity, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
         }
 
         setData()
@@ -57,7 +60,7 @@ class ProfilFragment : Fragment() {
 
         tvNama = view.findViewById(R.id.tv_nama)
         tvEmail = view.findViewById(R.id.tv_email)
-        tvNohp = view.findViewById(R.id.tv_phone)
+//        tvNohp = view.findViewById(R.id.tv_phone)
     }
 
     fun setData(){

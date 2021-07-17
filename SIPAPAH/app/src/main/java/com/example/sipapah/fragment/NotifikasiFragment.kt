@@ -1,5 +1,6 @@
 package com.example.sipapah.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sipapah.R
+import com.example.sipapah.activity.LoginActivity
 import com.example.sipapah.adapter.AdapterKreasiLengkap
 import com.example.sipapah.adapter.AdapterNotifikasi
 import com.example.sipapah.app.ApiConfig
@@ -28,6 +30,7 @@ import java.util.ArrayList
 class NotifikasiFragment : Fragment() {
 
     lateinit var rvNotifikasi: RecyclerView
+    lateinit var sp:SharedPref
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,6 +40,8 @@ class NotifikasiFragment : Fragment() {
         val view: View = inflater.inflate(R.layout.fragment_notifikasi, container, false)
 
         init(view)
+
+        sp = SharedPref(requireActivity())
 
         getNotifikasi()
 
@@ -51,7 +56,14 @@ class NotifikasiFragment : Fragment() {
 
     fun getNotifikasi() {
 
-        val id = SharedPref(requireActivity()).getUser()!!.id
+        if(sp.getUser() == null){
+            val intent = Intent(activity, LoginActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+        }
+        val id = sp.getUser()!!.id
+
+//        val id = SharedPref(requireActivity()).getUser()!!.id
 
         ApiConfig.instanceRetrofit.getnotifikasi(id).enqueue(object : Callback<ResponModel> {
             override fun onFailure(call: Call<ResponModel>, t: Throwable) {

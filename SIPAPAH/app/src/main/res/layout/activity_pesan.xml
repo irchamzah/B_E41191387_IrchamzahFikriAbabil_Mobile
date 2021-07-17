@@ -36,6 +36,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+
+
                 <EditText
                     android:id="@+id/edt_kategori"
                     android:layout_width="match_parent"
@@ -95,18 +97,25 @@
                 android:src="@drawable/ic_baseline_email_24"/>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <EditText
-                    android:id="@+id/edt_tanggalJemput"
+
+                <Button
+                    android:gravity="center"
+                    android:id="@+id/btn_tanggalJemput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:hint="Tanggal Jemput"
-                    android:inputType="text"
-                    android:singleLine="true"
-                    android:maxLines="1"/>
+                    android:backgroundTint="@color/putih"
+                    android:hint="Pilih Tanggal Jemput"/>
+
+                    <EditText
+                        android:gravity="center"
+                    android:id="@+id/tv_tanggaljemput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Tanggal"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -135,9 +144,7 @@
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:hint="Keterangan (pesan untuk pengepul)"
-                    android:inputType="text"
-                    android:singleLine="true"
-                    android:maxLines="1"/>
+                    android:inputType="text"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -145,7 +152,7 @@
 
         <Button
             android:layout_margin="30dp"
-            android:id="@+id/btn_register"
+            android:id="@+id/btn_buatpesanan"
             android:backgroundTint="@color/hijau1"
             android:layout_width="match_parent"
             android:layout_height="50dp"

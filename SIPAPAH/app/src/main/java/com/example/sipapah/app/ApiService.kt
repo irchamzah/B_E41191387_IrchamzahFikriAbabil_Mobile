@@ -4,6 +4,7 @@ import com.example.sipapah.model.ResponModel
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
+import java.text.DateFormat
 
 interface ApiService{
 
@@ -13,6 +14,8 @@ interface ApiService{
 
         @Field("name") name:String,
         @Field("email") email:String,
+        @Field("nohp") nohp:String,
+        @Field("alamat") alamat:String,
         @Field("password") password:String
 
         ):Call<ResponModel>
@@ -37,8 +40,9 @@ interface ApiService{
     @FormUrlEncoded
     @POST("layanan/pesan/{id}")
     fun setmemesan(
+            @Path("id") id: Int,
 
-            @Field("category_id") category_id:Int,
+            @Field("category") category:String,
             @Field("file") file:String,
             @Field("tanggaljemput") tanggaljemput:String,
             @Field("keterangan") keterangan:String

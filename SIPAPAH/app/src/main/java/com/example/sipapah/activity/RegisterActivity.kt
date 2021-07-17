@@ -37,6 +37,7 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         btn_punyaAkun.setOnClickListener{
+
             startActivity(Intent(this, LoginActivity::class.java))
         }
 
@@ -62,6 +63,18 @@ class RegisterActivity : AppCompatActivity() {
             edt_email.requestFocus()
             return
 
+        } else if(edt_nohp.text.isEmpty()) {
+
+            edt_nohp.error = "Kolom Email Tidak Boleh Kosong"
+            edt_nohp.requestFocus()
+            return
+
+        } else if(edt_alamat.text.isEmpty()) {
+
+            edt_alamat.error = "Kolom Email Tidak Boleh Kosong"
+            edt_alamat.requestFocus()
+            return
+
         } else if(edt_password.text.isEmpty()) {
 
             edt_password.error = "Kolom Password Tidak Boleh Kosong"
@@ -72,7 +85,7 @@ class RegisterActivity : AppCompatActivity() {
 
         pb_loading.visibility = View.VISIBLE
 
-        ApiConfig.instanceRetrofit.register(edt_nama.text.toString(), edt_email.text.toString(), edt_password.text.toString()).enqueue(object : Callback<ResponModel>{
+        ApiConfig.instanceRetrofit.register(edt_nama.text.toString(), edt_email.text.toString(), edt_nohp.text.toString(),edt_alamat.text.toString(), edt_password.text.toString()).enqueue(object : Callback<ResponModel>{
 
             override fun onResponse(call: Call<ResponModel>, response: Response<ResponModel>) {
 
