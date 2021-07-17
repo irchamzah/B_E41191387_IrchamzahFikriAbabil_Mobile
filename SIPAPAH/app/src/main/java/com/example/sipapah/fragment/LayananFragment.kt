@@ -15,6 +15,7 @@ import com.example.sipapah.activity.LoginActivity
 import com.example.sipapah.activity.RegisterActivity
 import com.example.sipapah.adapter.AdapterKreasiLengkap
 import com.example.sipapah.app.ApiConfig
+import com.example.sipapah.helper.SharedPref
 import com.example.sipapah.model.ResponModel
 import kotlinx.android.synthetic.main.activity_masuk.*
 import kotlinx.android.synthetic.main.fragment_layanan.*
@@ -32,12 +33,17 @@ class LayananFragment : Fragment() {
 
     lateinit var btnPesan: Button
 
+    lateinit var sp: SharedPref
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout.fragment_layanan, container, false)
+
+        sp = SharedPref(requireActivity())
+
 
         btnPesan = view.findViewById(R.id.btn_pesanan)
         btnPesan.setOnClickListener{
@@ -46,4 +52,7 @@ class LayananFragment : Fragment() {
 
         return view
     }
+
+
+
 }
