@@ -23,7 +23,7 @@ class DetailKreasiActivity : AppCompatActivity() {
 
         // Set Value
         tv_judul.text = kreasi.nama
-        val foto = "http://192.168.1.9/Kelompok1_WEB_GolonganB/public/storage/"+kreasi.foto
+        val foto = "http://192.168.1.2/Kelompok1_WEB_GolonganB/public/storage/"+kreasi.foto
         Picasso.get()
             .load(foto)
             .placeholder(R.drawable.sipapa_hijau)

@@ -40,7 +40,7 @@ class AdapterKreasi(var activity: Context, var arrDataKreasi:ArrayList<Kreasi>):
         holder.tvNama.text = arrDataKreasi[position].nama
         holder.tvKeterangan.text = arrDataKreasi[position].keterangan
 //        holder.imgKreasi.setImageResource(arrDataKreasi[position].foto)
-        val image = "http://192.168.1.9/Kelompok1_WEB_GolonganB/public/storage/"+arrDataKreasi[position].foto
+        val image = "http://192.168.1.2/Kelompok1_WEB_GolonganB/public/storage/"+arrDataKreasi[position].foto
         Picasso.get()
             .load(image)
             .placeholder(R.drawable.sipapa_hijau)

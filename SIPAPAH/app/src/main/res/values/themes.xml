@@ -3,7 +3,7 @@
     <style name="Theme.SIPAPAH" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#299E63</item>
-        <item name="colorPrimaryVariant">#197346</item>
+        <item name="colorPrimaryVariant">#299E63</item>
         <item name="colorOnPrimary">@color/putih</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>

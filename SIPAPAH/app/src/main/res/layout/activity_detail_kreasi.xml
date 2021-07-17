@@ -44,6 +44,7 @@
                         android:layout_height="wrap_content">
 
                         <TextView
+                            android:textStyle="bold"
                             android:id="@+id/tv_judul"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -51,10 +52,16 @@
                             android:ellipsize="marquee"
                             android:maxLines="3"
                             android:text="Judul Tutorial kreasi "
-                            android:textColor="@color/hijau2"
+                            android:textColor="@color/hitam"
                             android:textSize="20dp" />
 
                     </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="1dp"
+                        android:background="@color/abuabu"/>
 
                     <TextView
                         android:id="@+id/tv_keterangan"
@@ -62,18 +69,23 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:text="Keterangan Awal"
-                        android:textColor="@color/hitam"
+                        android:textColor="@color/abuabugelap"
                         android:textSize="16dp"
                         android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_height="1dp"
+                        android:background="@color/abuabu"/>
 
                     <TextView
                         android:id="@+id/tv_keteranganDetail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
                         android:layout_marginTop="30dp"
                         android:text="Keterangan Detail Disini"
-                        android:textColor="@color/hitam"
+                        android:textColor="@color/abuabugelap"
                         android:textSize="13dp" />
 
                 </LinearLayout>

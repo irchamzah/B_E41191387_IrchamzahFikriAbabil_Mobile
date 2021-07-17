@@ -36,6 +36,7 @@
             android:padding="20dp">
 
             <TextView
+                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -51,6 +52,7 @@
                 android:src="@drawable/ic_profil" />
 
             <TextView
+                android:textStyle="bold"
                 android:id="@+id/tv_nama"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

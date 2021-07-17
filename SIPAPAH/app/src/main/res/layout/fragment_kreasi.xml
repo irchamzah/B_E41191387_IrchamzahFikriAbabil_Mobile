@@ -43,10 +43,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="Kreasi"
+                    android:text="KREASI"
                     android:textStyle="bold"
-                    android:textColor="@color/hijau2"
-                    android:textSize="16dp"/>
+                    android:textColor="@color/hitam"
+                    android:textSize="15dp"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_kreasi_lengkap"
